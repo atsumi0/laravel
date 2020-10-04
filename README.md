@@ -9,6 +9,22 @@
 
 ## About Laravel
 
+- Heroku手順
+- echo 'web: vendor/bin/heroku-php-apache2 public/' > Procfile
+- heroku git:remote アプリ名
+- 適当なキー押下でブラウザが開くのでログイン
+- Logging in... done
+- set git remote heroku to https://git.heroku.com/testatsumi.git
+- 上記の表示が出ればOK
+- heroku config:set APP_KEY=$(php artisan --no-ansi key:generate --show)
+- heroku configで取得したDBURLで以下
+- heroku config:add DB_NAME='<データベース名>'
+- heroku config:add DB_USERNAME='<ユーザー名>'
+- heroku config:add DB_PASSWORD='<パスワード>'
+- heroku config:add DB_HOSTNAME='<ホスト名>'
+- heroku config:add DB_PORT='3306'
+- heroku config:add DATABASE_URL='mysql2://<ユーザー名>:<パスワード>@<ホスト名>/<データベース名>?reconnect=true'
+- mysql5.6互換の設定をphpファイルにいれたほうがいいかも
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
